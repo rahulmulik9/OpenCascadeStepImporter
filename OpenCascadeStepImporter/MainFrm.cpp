@@ -100,7 +100,18 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndMenuBar);
 	DockPane(&m_wndToolBar);
+	if (CFrameWndEx::OnCreate(lpCreateStruct) == -1)
+		return -1;
 
+	// Create the Ribbon
+	if (!m_wndRibbonBar.Create(this))
+	{
+		TRACE0("Failed to create ribbon\n");
+		return -1;
+	}
+
+	// Load Ribbon from resource (usually IDR_RIBBON)
+	m_wndRibbonBar.LoadFromResource(IDR_RIBBON1);
 
 	// enable Visual Studio 2005 style docking window behavior
 	CDockingManager::SetDockingMode(DT_SMART);

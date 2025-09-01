@@ -190,6 +190,7 @@
     <ClInclude Include="FileView.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="OCCTViewer.h" />
     <ClInclude Include="OpenCascadeStepImporter.h" />
     <ClInclude Include="OpenCascadeStepImporterDoc.h" />
     <ClInclude Include="OpenCascadeStepImporterView.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="ClassView.cpp" />
     <ClCompile Include="FileView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="OCCTViewer.cpp" />
     <ClCompile Include="OpenCascadeStepImporter.cpp" />
     <ClCompile Include="OpenCascadeStepImporterDoc.cpp" />
     <ClCompile Include="OpenCascadeStepImporterView.cpp" />
@@ -249,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\OpenCascadeStepImporter.rc2" />
+    <None Include="res\ribbon1.mfcribbon-ms" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
