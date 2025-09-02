@@ -26,6 +26,7 @@ BEGIN_MESSAGE_MAP(COpenCascadeStepImporterApp, CWinAppEx)
 	ON_COMMAND(ID_FILE_OPEN, &CWinAppEx::OnFileOpen)
 	// Standard print setup command
 	ON_COMMAND(ID_FILE_PRINT_SETUP, &CWinAppEx::OnFilePrintSetup)
+	ON_COMMAND(ID_BTB_FILE_IMPORT, &COpenCascadeStepImporterApp::OnBtbFileImport)
 END_MESSAGE_MAP()
 
 
@@ -217,3 +218,30 @@ void COpenCascadeStepImporterApp::SaveCustomState()
 
 
 
+
+void COpenCascadeStepImporterApp::OnBtbFileImport()
+{
+	CFileDialog dlg(TRUE, _T("*.stp"), nullptr,
+		OFN_FILEMUSTEXIST | OFN_HIDEREADONLY,
+		_T("STEP Files (*.stp;*.step)|*.stp;*.step|All Files (*.*)|*.*||"));
+
+	if (dlg.DoModal() == IDOK)
+	{
+		CString filePath = dlg.GetPathName();
+
+		// Get active view
+		CFrameWnd* pMainFrame = (CFrameWnd*)AfxGetMainWnd();
+		if (!pMainFrame) return;
+
+		CView* pView = pMainFrame->GetActiveView();
+		if (!pView) return;
+		// 3. Cast to your specific view class
+
+		COpenCascadeStepImporterView* pMyView = DYNAMIC_DOWNCAST(COpenCascadeStepImporterView, pView);
+		if (pMyView)
+		{
+			pMyView->SetView();
+			pMyView->ImportFile(filePath);
+		}
+	}
+}

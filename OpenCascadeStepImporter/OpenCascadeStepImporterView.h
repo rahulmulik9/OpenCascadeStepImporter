@@ -3,6 +3,8 @@
 //
 
 #pragma once
+#include <memory>
+#include "OCCTViewer.h"
 
 
 class COpenCascadeStepImporterView : public CView
@@ -14,9 +16,12 @@ protected: // create from serialization only
 // Attributes
 public:
 	COpenCascadeStepImporterDoc* GetDocument() const;
-
+	std::unique_ptr<OCCTViewer> m_pViwer;
 // Operations
 public:
+	void ImportFile(CString filname);
+
+	void SetView();
 
 // Overrides
 public:

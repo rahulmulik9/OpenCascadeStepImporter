@@ -41,6 +41,7 @@ COpenCascadeStepImporterView::COpenCascadeStepImporterView() noexcept
 
 COpenCascadeStepImporterView::~COpenCascadeStepImporterView()
 {
+	
 }
 
 BOOL COpenCascadeStepImporterView::PreCreateWindow(CREATESTRUCT& cs)
@@ -49,6 +50,17 @@ BOOL COpenCascadeStepImporterView::PreCreateWindow(CREATESTRUCT& cs)
 	//  the CREATESTRUCT cs
 
 	return CView::PreCreateWindow(cs);
+}
+
+void COpenCascadeStepImporterView::ImportFile(CString filname)
+{
+	m_pViwer->ReadFile(filname);
+}
+
+void COpenCascadeStepImporterView::SetView() {
+
+	m_pViwer = std::make_unique<OCCTViewer>();
+	m_pViwer->SetWindow(GetSafeHwnd());
 }
 
 // COpenCascadeStepImporterView drawing

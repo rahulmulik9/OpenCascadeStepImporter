@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>C:\OpenCASCADE-7.7.0-vc14-64\opencascade-7.7.0\win64\vc14\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TKernel.lib;TKMath.lib;TKG2d.lib;TKG3d.lib;TKGeomBase.lib;TKBRep.lib;TKTopAlgo.lib;TKGeomAlgo.lib;TKPrim.lib;TKV3d.lib;TKOpenGl.lib;TKService.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>TKXDESTEP.lib;TKXSDRAW.lib;TKSTEP.lib;TKTObjDRAW.lib;TKSTEPAttr.lib;TKDCAF.lib;TKOpenGlTest.lib;TKViewerTest.lib;TKTopTest.lib;TKSTEP209.lib;TKXDEIGES.lib;TKOffset.lib;TKIGES.lib;TKSTEPBase.lib;TKVRML.lib;TKXDECascade.lib;TKRWMesh.lib;TKBinXCAF.lib;TKSTL.lib;TKXmlXCAF.lib;TKFillet.lib;TKFeat.lib;TKXCAF.lib;TKMeshVS.lib;TKVCAF.lib;TKBool.lib;TKV3d.lib;TKXml.lib;TKStd.lib;TKBin.lib;TKXSBase.lib;TKCAF.lib;TKDraw.lib;TKXMesh.lib;TKBO.lib;TKMesh.lib;TKShHealing.lib;TKHLR.lib;TKPrim.lib;TKTopAlgo.lib;TKGeomAlgo.lib;TKBRep.lib;TKGeomBase.lib;TKOpenGl.lib;TKG3d.lib;TKService.lib;TKXmlTObj.lib;TKBinTObj.lib;TKXmlL.lib;TKG2d.lib;TKTObj.lib;TKBinL.lib;TKMath.lib;TKStdL.lib;TKLCAF.lib;TKCDF.lib;TKExpress.lib;TKXDE.lib;TKernel.lib;TKQADraw.lib;TKXDEDRAW.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
